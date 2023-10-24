@@ -120,6 +120,12 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             max-width: 80%;
         }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2列 */
+            grid-auto-rows: 1fr; /* 自動調整行高 */
+            gap: 1px; /* 設定按鈕之間的間距 */
+        }
 
         .page01 {
             padding: 20px 48px;
@@ -132,6 +138,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page02 {
             padding: 20px 48px;
@@ -144,6 +152,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page03 {
             padding: 20px 48px;
@@ -156,6 +166,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page04 {
             padding: 20px 48px;
@@ -168,6 +180,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page05 {
             padding: 20px 48px;
@@ -180,6 +194,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page06 {
             padding: 20px 48px;
@@ -192,6 +208,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page07 {
             padding: 20px 48px;
@@ -204,6 +222,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
         .page08 {
             padding: 20px 48px;
@@ -216,6 +236,8 @@
             background-size: cover;
             background-position: center;
             text-align: center;
+            flex: 1 0 calc(50% - 10px); /* Adjust the width and margins as needed */
+            margin: 5px;
         }
 
     </style>
@@ -253,35 +275,15 @@
         <div class="modal-content">
             <button class="buttonclose" id="closeModalButton3"></button>
             <p> </p>
-                <div style="display: block;">
+            <div class="button-container">
                     <a href="page01.html"><button class="page01" id="page01"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page02.html"><button class="page02" id="page02"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page03.html"><button class="page03" id="page03"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page04.html"><button class="page04" id="page04"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
+
                     <a href="page05.html"><button class="page05" id="page05"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page06.html"><button class="page06" id="page06"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page07.html"><button class="page07" id="page07"></button></a>
-                <br>
-                <p> </p>
-                <div style="display: block;">
                     <a href="page08.html"><button class="page08" id="page08"></button></a>
             </div>
         </div>
