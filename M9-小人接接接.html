@@ -28,7 +28,7 @@
 
         #player {
             position: absolute;
-            bottom: 110px;
+            bottom: 200px;
             left: 50%;
             transform: translateX(-50%);
             width: 120px;
@@ -41,8 +41,8 @@
 
         .falling-image {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 50px;
+            height: 50px;
         }
 
         #score {
@@ -130,49 +130,46 @@
 
         // 创建掉落图片的函数
         function createFallingImage() {
-
             const randomImagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
-
             const image = document.createElement("img");
             image.src = randomImagePath; // 图片路径
             image.className = "falling-image";
             image.style.left = `${Math.random() * (gameContainer.clientWidth - 50)}px`; // 随机水平位置
+            image.style.top = `${-80}px`; // 設定圖片一開始的位置在螢幕之外
             gameContainer.appendChild(image);
-
+        
             // 控制图片的下落
-            let topPosition = 0;
+            let topPosition = -80; // 初始化位置在螢幕之外
             const fallInterval = setInterval(() => {
-            topPosition += 3; // 下落速度
-            image.style.top = `${topPosition}px`;
-
-            // 检查碰撞
-            const playerRect = player.getBoundingClientRect();
-            const imageRect = image.getBoundingClientRect();
-            if (playerRect.right > imageRect.left && playerRect.left < imageRect.right && playerRect.bottom > imageRect.top && playerRect.top < imageRect.bottom) {
-                clearInterval(fallInterval);
-                gameContainer.removeChild(image);
-                if (correctImages.includes(randomImagePath)) { // 正確的圖片
-                    score++;
-                    scoreDisplay.textContent = `Score: ${score}`;
-                  } else { // 錯誤的圖片
-                    score--;
-                    scoreDisplay.textContent = `Score: ${score}`;
-                  }
-                
-                if (score === 5) {
-                    window.location.href = "page03-M9.html";
+                topPosition += 3; // 下落速度
+                image.style.top = `${topPosition}px`;
+        
+                // 检查碰撞
+                const playerRect = player.getBoundingClientRect();
+                const imageRect = image.getBoundingClientRect();
+                if (playerRect.right > imageRect.left && playerRect.left < imageRect.right && playerRect.bottom > imageRect.top && playerRect.top < imageRect.bottom) {
+                    clearInterval(fallInterval);
+                    gameContainer.removeChild(image);
+                    if (correctImages.includes(randomImagePath)) { // 正確的圖片
+                        score++;
+                        scoreDisplay.textContent = `Score: ${score}`;
+                    } else { // 錯誤的圖片
+                        score--;
+                        scoreDisplay.textContent = `Score: ${score}`;
+                    }
+        
+                    if (score === 5) {
+                        window.location.href = "page03-M9.html";
+                    }
                 }
-            }
-
-            // 移除超出屏幕的图片
-            if (topPosition > gameContainer.clientHeight) {
-                clearInterval(fallInterval);
-                gameContainer.removeChild(image);
-            }
+        
+                // 移除超出屏幕的图片
+                if (topPosition > gameContainer.clientHeight) {
+                    clearInterval(fallInterval);
+                    gameContainer.removeChild(image);
+                }
             }, 16);
-            
         }
-
         // 每隔一段时间创建一个掉落图片
         setInterval(createFallingImage, 2000);
 
