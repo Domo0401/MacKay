@@ -584,23 +584,17 @@
                 window.location.href = "F3-珠珠.html"
             }
             //O2
-            else if(input1.value === "O2") {
+            if(input1.value === "O2") {
                 // 清除現有內容
                 const modalContent = modal1.querySelector('.modal-content');
                 errorMessageAdded = false;
                 modalContent.innerHTML = `
                     <button class="buttonclose" id="closeModalButton1"></button>
-                    <h2>請問缺失的音符是哪兩個音調</h2>
-                    <img src="./程式圖片/O2/1.png">
-                    <button class="O21" id="buttonO21"></button>
-                    <button class="O22" id="buttonO22"></button>
-                    <button class="O23" id="buttonO23"></button>
-                    <button class="O24" id="buttonO24"></button>
-                    <button class="O25" id="buttonO25"></button>
-                    <button class="O26" id="buttonO26"></button>
-                    <button class="O27" id="buttonO27"></button>
+                    <h2>請輸入消失的音符是哪些</h2>
+                    <p>(中間不須空格)</p>
+                    <img src="./程式圖片/O2/0.PNG">
+                    <input type="text" id="input2" placeholder="答">
                     <button class="buttonconfirm" id="confirmButton1"></button>
-                    <div id="result"></div>
                 `;
                 // 叉叉控制
                 const closeModalButton1 = document.getElementById('closeModalButton1');
@@ -609,112 +603,11 @@
                      // 在需要重置时(為了回到輸入卡牌的地方)
                     location.reload();
                 });
-
-                let O2count = 0;
-                let O21 = 0;
-                let O22 = 0;
-                let O23 = 0;
-                let O24 = 0;
-                let O25 = 0;
-                let O26 = 0;
-                let O27 = 0;
-                const buttonO21 = document.getElementById('buttonO21');
-                buttonO21.addEventListener('click', () => {
-                    if (O21 === 0) {
-                        O2count--;
-                        buttonO21.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O21++;
-                    }
-                    else{
-                        O2count++;
-                        buttonO21.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O21 = 0;
-                    }
-                })
-                const buttonO22 = document.getElementById('buttonO22');
-                buttonO22.addEventListener('click', () => {
-                    if (O22 === 0) {
-                        O2count--;
-                        buttonO22.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O22++;
-                    }
-                    else{
-                        O2count++;
-                        buttonO22.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O22 = 0;
-                    }
-                })
-                const buttonO23 = document.getElementById('buttonO23');
-                buttonO23.addEventListener('click', () => {
-                    if (O23 === 0) {
-                        O2count--;
-                        buttonO23.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O23++;
-                    }
-                    else{
-                        O2count++;
-                        buttonO23.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O23 = 0;
-                    }
-                })
-                const buttonO24 = document.getElementById('buttonO24');
-                buttonO24.addEventListener('click', () => {
-                    if (O24 === 0) {
-                        O2count++;
-                        buttonO24.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O24++;
-                    }
-                    else{
-                        O2count--;
-                        buttonO24.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O24 = 0;
-                    }
-                })
-                const buttonO25 = document.getElementById('buttonO25');
-                buttonO25.addEventListener('click', () => {
-                    if (O25 === 0) {
-                        O2count++;
-                        buttonO25.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O25++;
-                    }
-                    else{
-                        O2count--;
-                        buttonO25.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O25 = 0;
-                    }
-                })
-                const buttonO26 = document.getElementById('buttonO26');
-                buttonO26.addEventListener('click', () => {
-                    if (O26 === 0) {
-                        O2count--;
-                        buttonO26.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O26++;
-                    }
-                    else{
-                        O2count++;
-                        buttonO26.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O26 = 0;
-                    }
-                })
-                const buttonO27 = document.getElementById('buttonO27');
-                buttonO27.addEventListener('click', () => {
-                    if (O27 === 0) {
-                        O2count--;
-                        buttonO27.style.backgroundImage = "url('./程式圖片/O2/3.png')";
-                        O27++;
-                    }
-                    else{
-                        O2count++;
-                        buttonO27.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                        O27 = 0;
-                    }
-                })
-
                 // 監聽新的確認按鈕
                 const confirmButton1 = document.getElementById('confirmButton1');
-                const resultDiv = document.getElementById("result");
+                const input2 = document.getElementById('input2');
                 confirmButton1.addEventListener('click', () => {
-                  if (O2count === 2) {
+                  if (input2.value === "FaSol") {
                     const modalContent = modal1.querySelector('.modal-content');
                     modalContent.innerHTML = `
                     <h2>請觀看以下影片後翻開卡片X7</h2>
@@ -727,24 +620,19 @@
                     // 在需要重置时(為了回到輸入卡牌的地方)
                     location.reload();
                     });
+                    errorMessageAdded = false;
                   }
                   else {
-                    O2count = 0;
-                    O21 = 0;
-                    O22 = 0;
-                    O23 = 0;
-                    O24 = 0;
-                    O25 = 0;
-                    O26 = 0;
-                    O27 = 0;
-                    buttonO21.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO22.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO23.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO24.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO25.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO26.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    buttonO27.style.backgroundImage = "url('./程式圖片/O2/2.png')";
-                    resultDiv.textContent = "好像不太正確耶...";
+                    // 清除用户输入的内容
+                    input2.value = '';
+                    // 答案错误时，显示提示
+                    if (!errorMessageAdded) {
+                        const modalContent = modal1.querySelector('.modal-content');
+                        const errorMessage = document.createElement('p');
+                        errorMessage.textContent = '這個答案不對喔~請再輸入一次';
+                        modalContent.appendChild(errorMessage);
+                        errorMessageAdded = true; // 标记错误提示已添加
+                    }
                   }
                 });
             }
