@@ -79,16 +79,16 @@
     </div>
     <script>
         const board = [
-            [0, 6, 2, 2, 2, 6, 3, 3, 3, 2],
-            [3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [3, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 9, 9, 5, 3, 1, 2, 6, 9, 9],
+            [9, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [8, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [7, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
             [4, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-            [4, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            [4, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [4, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [6, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         ];
         const closeModalButton1 = document.getElementById('closeModalButton1');
         closeModalButton1.addEventListener('click', () => {
@@ -144,16 +144,16 @@
         
         checkButton.addEventListener("click", () => {
             for(let row = 1; row<10 ;row++){
-                if(row === 1 && rowsColoredCount[row] === 3){
+                if(row === 1 && rowsColoredCount[row] === 9){
                     count++
                 }
-                if(row === 2 && rowsColoredCount[row] === 3){
+                if(row === 2 && rowsColoredCount[row] === 8){
                     count++
                 }
-                if(row === 3 && rowsColoredCount[row] === 3){
+                if(row === 3 && rowsColoredCount[row] === 7){
                     count++
                 }
-                if(row === 4 && rowsColoredCount[row] === 5){
+                if(row === 4 && rowsColoredCount[row] === 6){
                     count++
                 }
                 if(row === 5 && rowsColoredCount[row] === 5){
@@ -162,42 +162,42 @@
                 if(row === 6 && rowsColoredCount[row] === 4){
                     count++
                 }
-                if(row === 7 && rowsColoredCount[row] === 1){
+                if(row === 7 && rowsColoredCount[row] === 4){
                     count++
                 }
-                if(row === 8 && rowsColoredCount[row] === 1){
+                if(row === 8 && rowsColoredCount[row] === 4){
                     count++
                 }
-                if(row === 9 && rowsColoredCount[row] === 4){
+                if(row === 9 && rowsColoredCount[row] === 6){
                     count++
                 }
             }
             for(let col = 1; col<10 ;col++){
-                if(col === 1 && colsColoredCount[col] === 6){
+                if(col === 1 && colsColoredCount[col] === 9){
                     count++
                 }
-                if(col === 2 && colsColoredCount[col] === 2){
+                if(col === 2 && colsColoredCount[col] === 9){
                     count++
                 }
-                if(col === 3 && colsColoredCount[col] === 2){
+                if(col === 3 && colsColoredCount[col] === 5){
                     count++
                 }
-                if(col === 4 && colsColoredCount[col] === 2){
+                if(col === 4 && colsColoredCount[col] === 3){
                     count++
                 }
-                if(col === 5 && colsColoredCount[col] === 6){
+                if(col === 5 && colsColoredCount[col] === 1){
                     count++
                 }
-                if(col === 6 && colsColoredCount[col] === 3){
+                if(col === 6 && colsColoredCount[col] === 2){
                     count++
                 }
-                if(col === 7 && colsColoredCount[col] === 3){
+                if(col === 7 && colsColoredCount[col] === 6){
                     count++
                 }
-                if(col === 8 && colsColoredCount[col] === 3){
+                if(col === 8 && colsColoredCount[col] === 9){
                     count++
                 }
-                if(col === 9 && colsColoredCount[col] === 2){
+                if(col === 9 && colsColoredCount[col] === 9){
                     count++
                 }
             }
