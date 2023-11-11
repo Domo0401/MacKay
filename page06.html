@@ -376,6 +376,11 @@
             margin: 5px;
         }
 
+        .img{
+            width: 100%; /* 设置宽度为100% */
+            max-width: 300px; /* 设置最大宽度，根据需要进行调整 */
+            height: auto; /* 保持纵横比，自动计算高度 */
+        }
 
     </style>
 </head>
@@ -592,7 +597,7 @@
                     <button class="buttonclose" id="closeModalButton1"></button>
                     <h2>請輸入消失的音符是哪些</h2>
                     <p>(中間不須空格)</p>
-                    <img src="./程式圖片/O2/0.PNG">
+                    <img src="./程式圖片/O2/0.PNG" class="img">
                     <input type="text" id="input2" placeholder="答">
                     <button class="buttonconfirm" id="confirmButton1"></button>
                 `;
