@@ -93,49 +93,43 @@
   </div>
   
   <script>
-const container = document.getElementById('container');
-const background = document.getElementById('background');
-const circle = document.getElementById('circle');
-let isDragging = false;
-let touchStartX, touchStartY;
-let circleOffsetX = 0;
-let circleOffsetY = 0;
-
-// 初始化時先將圓圈的剪裁半徑設定為100px
-background.style.clipPath = 'circle(100px at 50% 50%)';
-
-circle.addEventListener('touchstart', (e) => {
-  isDragging = true;
-  const touch = e.touches[0];
-  touchStartX = touch.clientX - circle.getBoundingClientRect().left;
-  touchStartY = touch.clientY - circle.getBoundingClientRect().top;
-});
-
-document.addEventListener('touchmove', (e) => {
-  if (isDragging) {
-    const touch = e.touches[0];
-    const posX = touch.clientX - touchStartX;
-    const posY = touch.clientY - touchStartY;
-
-    circleOffsetX = posX;
-    circleOffsetY = posY;
-
-    // 使用 translate 設定位移
-    circle.style.transform = `translate(${circleOffsetX}px, ${circleOffsetY}px)`;
-
-    // 計算裁剪圓點的位置
-    const circleX = 50 + circleOffsetX / container.clientWidth * 100;
-    const circleY = 50 + circleOffsetY / container.clientHeight * 100;
-
-    // 更新剪裁路徑
-    background.style.clipPath = `circle(100px at ${circleX}% ${circleY}%)`;
-  }
-});
-
-document.addEventListener('touchend', () => {
-  isDragging = false;
-});
-
+    const container = document.getElementById('container');
+    const background = document.getElementById('background');
+    const circle = document.getElementById('circle');
+    let isDragging = false;
+    let touchStartX, touchStartY;
+    
+    
+    // 初始化時先將圓圈的剪裁半徑設定為100px
+    background.style.clipPath = 'circle(100px at center)';
+    
+    circle.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      const touch = e.touches[0];
+      touchStartX = touch.clientX - circle.getBoundingClientRect().left;
+      touchStartY = touch.clientY - circle.getBoundingClientRect().top;
+    });
+    
+    document.addEventListener('touchmove', (e) => {
+      if (isDragging) {
+        const touch = e.touches[0];
+        const posX = touch.clientX;
+        const posY = touch.clientY;
+    
+        circle.style.left = `${posX}px`;
+        circle.style.top = `${posY}px`;
+    
+        // 处理剪裁路径以适应拖动位置
+        const circleX = posX;
+        const circleY = posY;
+        background.style.clipPath = `circle(100px at ${circleX}px ${circleY}px)`;
+      }
+    });
+    
+    document.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+    
   </script>
 </body>
 </html>
