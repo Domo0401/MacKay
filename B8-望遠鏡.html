@@ -108,15 +108,15 @@
     document.addEventListener('touchmove', (e) => {
       if (isDragging) {
         const touch = e.touches[0];
-        const posX = touch.clientX - touchStartX;
-        const posY = touch.clientY - touchStartY;
+        const posX = touch.clientX;
+        const posY = touch.clientY;
     
         circle.style.left = `${posX}px`;
         circle.style.top = `${posY}px`;
     
         // 处理剪裁路径以适应拖动位置
-        const circleX = posX + circle.clientWidth / 2;
-        const circleY = posY + circle.clientHeight / 2;
+        const circleX = posX;
+        const circleY = posY;
         background.style.clipPath = `circle(100px at ${circleX}px ${circleY}px)`;
       }
     });
