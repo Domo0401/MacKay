@@ -13,12 +13,10 @@
             background-image: url('./背景圖/封面至中.png');
             background-size: 1600px 1100px;
             background-position: center;
-            font-family: Arial, sans-serif;
         }
         
         .container {
             text-align: center;
-            padding-top: 10px;
         }                      
 
         .video {
@@ -26,18 +24,43 @@
             max-width: 300px; /* 设置最大宽度，根据需要进行调整 */
             height: auto; /* 保持纵横比，自动计算高度 */
         }
+        
+        #floating-window {
+            position: fixed; /* 固定定位 */
+            top: 10px; /* 距離頁面頂部的距離，根據需要調整 */
+            right: 10px; /* 距離頁面右側的距離，根據需要調整 */
+            background-color: #f2f2f2;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
 
+        h1 {
+            font-size: 50px; /* 設定字體大小，您可以調整需要的大小 */
+            color: #045420; /* 設定文字顏色，您可以使用顏色名稱或十六進制碼 */
+        }
+        h2 {
+            font-size: 25px; /* 設定字體大小，您可以調整需要的大小 */
+            color: #045420; /* 設定文字顏色，您可以使用顏色名稱或十六進制碼 */
+        }
+        h3 {
+            font-size: 15px; /* 設定字體大小，您可以調整需要的大小 */
+            color: #045420; /* 設定文字顏色，您可以使用顏色名稱或十六進制碼 */
+        }
     </style>
 </head>
 
 <body>
   <div class="container">
-    <img src="./《尋·馬偕》.png"><br>
-    <img src="./字2.png"><br>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jv5Ty5jn5rQ?si=RZZ1MfOuPOCTvY7m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/i1_At5VvCmY?si=aHP9bgNR_MJiOrb3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
-    <img src="./字3.png"><br>
-    <img src="./qrcord.png">
+    <h1>《尋·馬偕》</h1>
+    <h2>一分鐘簡介</h2>
+    <iframe width="840" height="480" src="https://www.youtube.com/embed/jv5Ty5jn5rQ?si=RZZ1MfOuPOCTvY7m" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h2>教學影片</h2><br>
+    <iframe width="840" height="480" src="https://www.youtube.com/embed/i1_At5VvCmY?si=aHP9bgNR_MJiOrb3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><br>
+
+    <div id="floating-window">
+        <h3>請使用「手機」進入解謎網站</h3>
+        <img src="./qrcord.png">
+    </div>
   </div>
 </body>
 </html>
